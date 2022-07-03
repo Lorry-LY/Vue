@@ -17,26 +17,23 @@ public class SysLog {
     @Field("operationUser")
     private String operationUser;//操作人
 
+    @Field("ip")
+    private String ip;
+
     @Field("path")
     private String path;//请求路径
 
+    @Field("date")
+    private String date;//日期
+
     @Field("time")
-    private String time;//方法执行时间
+    private String time;//时间
+
+    @Field("method")
+    private String method;//操作方法
 
     @Field("parameter")
     private String parameter;//方法入参
-
-    @Field("title")
-    private String title;//操作方法
-
-    @Field("action")
-    private String action;//方法描述
-
-    @Field("sysType")
-    private Integer sysType;//系统类型
-
-    @Field("opType")
-    private Integer opType;//操作类型
 
 }
 

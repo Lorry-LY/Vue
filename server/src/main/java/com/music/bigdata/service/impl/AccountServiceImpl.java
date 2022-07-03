@@ -62,7 +62,6 @@ public class AccountServiceImpl implements AccountService {
         if(users.size()==0)return new ErrorMessage("没有该用户");
         if(users.size()!=1)return new ErrorMessage("数据库错误");
         if (!users.get(0).getPasswd().equals(passwd))return new ErrorMessage("密码错误");
-        behaviorMapper.insertLogin(users.get(0));
         return new SuccessMessage<>("登陆成功",users.get(0));
     }
 
@@ -74,6 +73,11 @@ public class AccountServiceImpl implements AccountService {
         }catch (Exception e){
             return new ErrorMessage("已存在该用户");
         }
+    }
+
+    @Override
+    public Message logout(User user) {
+        return new SuccessMessage<>("登出成功");
     }
 
     private Message checkIntegrity(User user){

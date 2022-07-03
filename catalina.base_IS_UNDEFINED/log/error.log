@@ -1,0 +1,3 @@
+2022-07-03 19:49:41.196 [main] INFO  com.music.bigdata.BigDataApplication -     Starting BigDataApplication using Java 18.0.1.1 on Lorry专业版 with PID 17304 (D:\sublime\project\Vue_basic\bigdata\Vue\server\target\classes started by Lorry in D:\sublime\project\Vue_basic\bigdata\Vue)
+2022-07-03 19:49:41.199 [main] INFO  com.music.bigdata.BigDataApplication -     No active profile set, falling back to 1 default profile: "default"
+2022-07-03 19:49:43.491 [main] INFO  com.music.bigdata.BigDataApplication -     Started BigDataApplication in 2.547 seconds (JVM running for 3.291)

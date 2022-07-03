@@ -37,14 +37,14 @@ public class WebMVCConfig implements WebMvcConfigurer {
         excludePath1.add("/swagger-resources/**");     //swagger
         excludePath1.add("/v2/api-docs");     //swagger
         excludePath1.add("/webjars/**");     //swagger
-        registry.addInterceptor(cookieInterceptor)
-                .addPathPatterns("/**")
-                .excludePathPatterns(excludePath1);
-
-
-        registry.addInterceptor(tokenInterceptor)
-                .addPathPatterns("/**")
-                .excludePathPatterns(excludePath1);
+//        registry.addInterceptor(cookieInterceptor)
+//                .addPathPatterns("/**")
+//                .excludePathPatterns(excludePath1);
+//
+//
+//        registry.addInterceptor(tokenInterceptor)
+//                .addPathPatterns("/**")
+//                .excludePathPatterns(excludePath1);
 
     }
 

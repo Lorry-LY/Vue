@@ -15,4 +15,5 @@ public interface AccountService {
 
     Message register(User user);
 
+    Message logout(User user);
 }

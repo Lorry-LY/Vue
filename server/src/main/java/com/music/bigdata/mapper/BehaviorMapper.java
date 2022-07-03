@@ -64,7 +64,4 @@ public class BehaviorMapper {
         mongoTemplate.insert(record);
     }
 
-    public void insertLogin(User user) {
-
-    }
 }

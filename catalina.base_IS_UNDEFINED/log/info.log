@@ -1,0 +1,2 @@
+2022-07-03 19:49:52.290 [http-nio-9999-exec-1] ERROR com.music.bigdata.aspect.LogAspect -     数量分析	请求信息：URL = {/analyze/sum},	请求方式 = {GET},	请求IP = {0:0:0:0:0:0:0:1},	类方法 = {com.music.bigdata.controller.AnalyzeController.sumAnalyze},	请求参数 = [kind=0]
+2022-07-03 19:49:52.448 [http-nio-9999-exec-1] ERROR com.music.bigdata.aspect.LogAspect -     请求结果：200	分析成功

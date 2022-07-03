@@ -5,12 +5,10 @@ import com.music.bigdata.common.impl.ErrorMessage;
 import com.music.bigdata.entity.User;
 import com.music.bigdata.service.AccountService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Objects;
@@ -55,6 +53,16 @@ public class ConsumerController {
             @RequestParam(value = "passwd") String passwd
     ){
         return accountService.login(text,passwd);
+    }
+
+    @ApiOperation(value = "登出",notes = "用户登出")
+    @RequestMapping(value = "/logout",method = RequestMethod.POST)
+    @ApiImplicitParam(name = "user", value = "用户", required = true, dataType = "User")
+    public Message logout(
+            @ApiParam(name="user",required = true,value = "用户信息")
+            @RequestBody User user
+    ){
+        return accountService.logout(user);
     }
 
     @ApiOperation(value = "更新信息",notes = "用户更新（密码，手机号，邮箱）")
