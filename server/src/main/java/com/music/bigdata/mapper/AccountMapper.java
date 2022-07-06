@@ -48,4 +48,24 @@ public class AccountMapper {
         mongoTemplate.insert(user);
     }
 
+    public List<User> findSameEmail(String e_mail) {
+        Criteria criteria = new Criteria();
+        criteria.orOperator(Criteria.where("e_mail").is(e_mail));
+        Query query = new Query(criteria);
+        return mongoTemplate.find(query,User.class);
+    }
+
+    public List<User> findSamePhone(String phone) {
+        Criteria criteria = new Criteria();
+        criteria.orOperator(Criteria.where("phone").is(phone));
+        Query query = new Query(criteria);
+        return mongoTemplate.find(query,User.class);
+    }
+
+    public List<User> findSameName(String adminName) {
+        Criteria criteria = new Criteria();
+        criteria.orOperator(Criteria.where("adminName").is(adminName));
+        Query query = new Query(criteria);
+        return mongoTemplate.find(query,User.class);
+    }
 }

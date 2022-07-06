@@ -83,4 +83,16 @@ public class ConsumerController {
         return new ErrorMessage("参数错误");
     }
 
+    @RequestMapping(value = "/findSame",method = RequestMethod.GET)
+    public Message findSame(
+            @RequestParam(value = "adminName",required = false,defaultValue = "") String adminName,
+            @RequestParam(value = "phone",required = false,defaultValue = "") String phone,
+            @RequestParam(value = "e_mail",required = false,defaultValue = "") String e_mail
+    ){
+        if(!Objects.equals(adminName, "")){return accountService.findSameName(adminName);}
+        if(!Objects.equals(phone, "")){return accountService.findSamePhone(phone);}
+        if(!Objects.equals(e_mail, "")){return accountService.findSameEmail(e_mail);}
+        return new ErrorMessage("参数错误");
+    }
+
 }

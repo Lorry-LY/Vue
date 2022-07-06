@@ -16,4 +16,10 @@ public interface AccountService {
     Message register(User user);
 
     Message logout(User user);
+
+    Message findSameName(String adminName);
+
+    Message findSamePhone(String phone);
+
+    Message findSameEmail(String e_mail);
 }

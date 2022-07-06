@@ -80,6 +80,42 @@ public class AccountServiceImpl implements AccountService {
         return new SuccessMessage<>("登出成功");
     }
 
+    @Override
+    public Message findSameName(String adminName) {
+        try {
+            List<User> users= accountMapper.findSameName(adminName);
+            if(users.isEmpty())
+                return new SuccessMessage<>("查询成功",true);
+            else return new SuccessMessage<>("查询成功",false);
+        }catch (Exception e){
+            return new ErrorMessage("数据库异常");
+        }
+    }
+
+    @Override
+    public Message findSamePhone(String phone) {
+        try {
+            List<User> users= accountMapper.findSamePhone(phone);
+            if(users.isEmpty())
+                return new SuccessMessage<>("查询成功",true);
+            else return new SuccessMessage<>("查询成功",false);
+        }catch (Exception e){
+            return new ErrorMessage("数据库异常");
+        }
+    }
+
+    @Override
+    public Message findSameEmail(String e_mail) {
+        try {
+            List<User> users= accountMapper.findSameEmail(e_mail);
+            if(users.isEmpty())
+                return new SuccessMessage<>("查询成功",true);
+            else return new SuccessMessage<>("查询成功",false);
+        }catch (Exception e){
+            return new ErrorMessage("数据库异常");
+        }
+    }
+
     private Message checkIntegrity(User user){
         if(user.getName()==null) return new ErrorMessage("昵称错误");
         if(user.getAdminName()==null) return new ErrorMessage("用户名错误");

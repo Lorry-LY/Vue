@@ -10,6 +10,16 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('@/components/Login')
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: () => import('@/components/Register')
     }
   ]
 })

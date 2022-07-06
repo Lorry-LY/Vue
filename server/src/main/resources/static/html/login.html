@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>登录</title>
+    <meta name="decorator" content="default" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="modal-dialog" id="login_form">
+        <div class="modal-content">
+            <div class="modal-title">
+                <ul class="news-nav js-nav-title">
+                    <li class="on" data="login">登录</li>
+                    <li class="" data="register">注册</li>
+                </ul>
+            </div>
+            <div class="modal-body index-news-list" id="index-news-list-1">
+                <form class="loginForm" id="loginForm" action="" method="post">
+                    <div class="form-group">
+                        <input class="form-control required" name="adminName" id="name" type="text"
+                               placeholder="请输入用户名、手机号或邮箱">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control required" name="password" id="password" type="password"
+                               placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">登录</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-body index-news-list" id="index-news-list-2">
+                <form class="loginForm" id="registerForm" action="http://114.132.232.157:9999/client/register" method="post">
+                    <div class="form-group">
+                        <input class="form-control required" name="name" id="rename" type="text"
+                               placeholder="请输入昵称">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control required" name="adminName" id="adminName" type="text"
+                               placeholder="请输入要注册的用户名">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control required" name="password" id="rePassword" type="password"
+                               placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control required" name="rePassword" id="rePassword1" type="password"
+                               placeholder="请再次输入密码">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control required" name="phone" id="phone" type="text"
+                               placeholder="请输入手机号">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control required" name="e_mail" id="e_mail" type="text"
+                               placeholder="请输入邮箱">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">注册</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".js-nav-title li").click(function () {
+            $(this).attr("class", "on");
+            $(this).siblings().attr("class", "");
+            var index = $(".js-nav-title li").index(this);
+            $(".index-news-list").css("display", "none");
+            $("#index-news-list-" + (index + 1)).css("display", "block");
+        });
+    });
+</script>
+</body>
+
+</html>

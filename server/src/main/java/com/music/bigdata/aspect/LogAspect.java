@@ -38,7 +38,8 @@ public class LogAspect {
     /**
      * ..表示包及子包 该方法代表controller层的所有方法  TODO 路径需要根据自己项目定义
      */
-    @Pointcut("execution(public * com.music.bigdata.controller..*.*(..))")
+    @Pointcut("execution(public * com.music.bigdata.controller..*.*(..))" +
+            ",!execution(public * com.music.bigdata.controller.ViewController.*(..))")
     public void controllerMethod() {
     }
 
