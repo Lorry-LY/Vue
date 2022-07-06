@@ -1,12 +1,15 @@
 <template>
   <div class="hello">
-    <img src="../assets/logo.png">
+      <img src="../../assets/logo.png">
     <h1>{{ msg }}</h1>
     <div class="form-group">
       <router-link class="form-control" to="/login">登录</router-link>
     </div>
     <div class="form-group">
       <router-link class="form-control" to="/register">注册</router-link>
+    </div>
+    <div class="form-group">
+      <router-link class="form-control" to="/index">主页</router-link>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="modal-body index-news-list">
     <div class="form-group">
-      <img src="../assets/logo.png">
+      <img src="src/assets/logo.png">
     </div>
     <div class="form-group">
       用户名:<input class="form-control required" type="text" v-model="loginForm.username" placeholder="请输入用户名"/>
