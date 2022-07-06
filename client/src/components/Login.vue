@@ -19,35 +19,46 @@ export default {
   data () {
     return {
       loginForm: {
-        username: '',
+        username: this.$route.params.data,
         password: ''
       }
     }
   },
   methods: {
     login () {
-      this.$axios.get('/client/login', {
-        params: {
-          username: this.loginForm.username,
-          password: this.loginForm.password
+      this.$axios({
+        method: 'post',
+        url: '/client/login',
+        data: {
+          text: this.loginForm.username,
+          passwd: this.loginForm.password
         }
       }).then(res => {
         console.log(res)
+      }).catch(function (error) {
+        console.log(error)
       })
+    }
+  },
+  watch: {
+    'loginForm.username' (newValue) {
+      console.log(newValue)
     }
   }
 }
 </script>
 
 <style scoped>
-.form-group{
+.form-group {
   margin: 30px 0;
 }
-.form-group .form-control{
+
+.form-group .form-control {
   height: 40px;
   font-size: 15px;
 }
-.btn-primary{
+
+.btn-primary {
   background-color: #2e9993;
   border: 0px solid transparent;
   width: 400px;

@@ -4,7 +4,7 @@
       <img src="../assets/logo.png"><br>
     </div>
     <div class="form-group">
-      昵称：   <input class="form-control required" type="text" v-model="RegisterForm.name" placeholder="请输入用户名"/>
+      昵称： <input class="form-control required" type="text" v-model="RegisterForm.name" placeholder="请输入用户名"/>
       <div class="tip">
 
       </div>
@@ -62,16 +62,16 @@ export default {
   },
   methods: {
     register () {
-      this.$axios.get('/client/register', {
-        params: {
-          name: this.RegisterForm.name,
-          adminName: this.RegisterForm.adminName,
-          password: this.RegisterForm.password,
-          phone: this.RegisterForm.phone,
-          e_mail: this.RegisterForm.e_mail
-        }
+      this.$axios.post('/client/register', {
+        'name': this.RegisterForm.name,
+        'adminName': this.RegisterForm.adminName,
+        'passwd': this.RegisterForm.password,
+        'phone': this.RegisterForm.phone,
+        'e_mail': this.RegisterForm.e_mail
       }).then(res => {
-        console.log(res)
+        this.$router.push({
+          name: 'Login', params: {data: res.data.message.data.adminName}})
+        console.log(res.data.message)
       })
     }
   },
